@@ -57,6 +57,27 @@ sortByRichest = () => {
    updateDom();
 }
 
+// filter only millionaires 
+
+showByMillion = ()=> {
+    data = data.filter( user => user.money > 1000000);
+    updateDom();
+}
+
+
+//Calculate wealth by Reduce method.
+
+calculateWealth = ()=>{
+    const wealth = data.reduce((acc, user) => 
+        (acc += user.money),0 ) ;
+        console.log(wealth);
+        const wealthElement = document.createElement('div');
+        wealthElement.innerHTML = 
+        `<h3>Total Wealth:<strong>${formatMoney(wealth)}</strong></h3>`;
+        main.appendChild(wealthElement);
+}
+
+
 
 
  async function getRandomUser()  {
@@ -80,6 +101,8 @@ sortByRichest = () => {
 addUserBtn.addEventListener('click',getRandomUser);
 doubleBtn.addEventListener('click',doubleMoney);
 sortBtn.addEventListener('click',sortByRichest);
+showMillionaires.addEventListener('click',showByMillion);
+calculateWealthBtn.addEventListener('click',calculateWealth);
 
 
 
