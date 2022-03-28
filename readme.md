@@ -10,3 +10,6 @@ Project to teach high order array methods and DOM manipulation
 - Use filter() to filter only millionaires
 - Use sort() to sort by wealth
 - Use reduce() to add all wealth
+
+
+Demo: https://dhirendralive9.github.io/DOM-Array-Methods/
